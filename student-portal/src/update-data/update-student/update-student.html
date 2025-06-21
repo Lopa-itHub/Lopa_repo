@@ -1,0 +1,20 @@
+<div class="form-wrapper">
+  <h2>Update Student Records</h2>
+
+  <label>Enter Student ID to update:</label>
+  <input [(ngModel)]="studentId" placeholder="Enter ID" />
+  <button (click)="fetchStudent()">Fetch</button>
+
+  <div *ngIf="student">
+    <h3>Edit Details</h3>
+    <input [(ngModel)]="student.name" placeholder="Name" />
+    <input [(ngModel)]="student.phone" placeholder="Phone" />
+    <input [(ngModel)]="student.email" placeholder="Email" />
+    <input [(ngModel)]="student.dob" type="date" />
+    <button (click)="updateStudent()">Save</button>
+  </div>
+
+  <div *ngIf="errorMsg" class="error">{{ errorMsg }}</div>
+<div *ngIf="successMsg" class="success">{{ successMsg }}</div>
+
+</div>

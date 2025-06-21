@@ -1,0 +1,11 @@
+<h2>Delete Student Record</h2>
+<label>Enter Student ID to delete:</label>
+<input [(ngModel)]="studentId" placeholder="Enter ID" />
+<button (click)="deleteStudent()">Delete</button>
+
+<!-- <div *ngIf="message" class="message">{{ message }}</div> -->
+
+<div *ngIf="message" [ngClass]="{ 'message': true, 'error': message.includes('not') }">
+  {{ message }}
+</div>
+

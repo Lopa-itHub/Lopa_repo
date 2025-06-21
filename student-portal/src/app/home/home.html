@@ -1,0 +1,18 @@
+<!-- home.component.html -->
+<p class="welcomeMessage">Welcome to Student Portal! A place where learning meets possibility.</p>
+
+<div class="chatbot-container" [class.open]="isChatOpen">
+  <div class="chat-header" (click)="toggleChat()">
+    Chat with us 💬
+  </div>
+
+  <div class="chat-body" *ngIf="isChatOpen">
+    <div class="messages">
+      <div *ngFor="let msg of messages" [ngClass]="msg.from">
+        {{ msg.text }}
+      </div>
+    </div>
+
+    <input [(ngModel)]="userInput" (keydown.enter)="sendMessage()" placeholder="Type a message..." />
+  </div>
+</div>

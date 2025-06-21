@@ -1,0 +1,44 @@
+<div class="form-container">
+  <h2>Add Student</h2>
+
+  <form #studentForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <!-- ID -->
+    <label for="id">Student ID:</label>
+    <input type="text" id="id" name="id" [(ngModel)]="student.id" required #id="ngModel" placeholder="Enter ID" />
+    <div class="error" *ngIf="id.invalid && id.touched">ID is required</div>
+
+    <!-- Name -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="student.name" required #name="ngModel" placeholder="Enter Name" />
+    <div class="error" *ngIf="name.invalid && name.touched">Name is required</div>
+
+    <!-- Phone -->
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" [(ngModel)]="student.phone" 
+           required pattern="^[0-9]{10}$" #phone="ngModel" placeholder="Enter 10-digit Phone Number" />
+    <div class="error" *ngIf="phone.invalid && phone.touched">
+      <span *ngIf="phone.errors?.['required']">Phone number is required</span>
+      <span *ngIf="phone.errors?.['pattern']">Phone number must be exactly 10 digits</span>
+    </div>
+
+    <!-- Email -->
+    <label for="email">Email ID:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="student.email" 
+           required #email="ngModel" placeholder="Enter Email ID" />
+    <div class="error" *ngIf="email.invalid && email.touched">
+      <span *ngIf="email.errors?.['required']">Email is required</span>
+      <span *ngIf="email.errors?.['email']">Enter a valid email</span>
+    </div>
+
+    <!-- DOB -->
+    <label for="dob">Date of Birth:</label>
+<input type="date" id="dob" name="dob" [(ngModel)]="student.dob"
+       required #dob="ngModel" placeholder="YYYY-MM-DD" />
+<div class="error" *ngIf="dob.invalid && dob.touched">Date of birth is required</div>
+<div class="error" *ngIf="dateError && dob.touched">Date must be from year 2000 onwards</div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="studentForm.invalid">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,76 @@
+/* Container styling */
+:host {
+  display: block;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.500);
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  color: #d9534f;
+  margin-bottom: 1.5rem;
+}
+
+/* Label */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Input */
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #d9534f;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c9302c;
+}
+
+/* Message */
+.message {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #5cb85c; /* success green */
+}
+
+.message.error {
+  background-color: #d9534f; /* error red */
+}
